@@ -7,22 +7,23 @@
 Summary:   Library for reading Jcat files
 Group:     System/Libraries
 Name:      libjcat
-Version:   0.1.0
-Release:   %mkrel 1
+Version:   0.1.1
+Release:   1
 License:   LGPLv2+
 URL:       https://github.com/hughsie/libjcat
 Source0:   https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
 
 BuildRequires: gtk-doc
 BuildRequires: meson
-BuildRequires: gobject-introspection-devel
-BuildRequires: glib2-devel >= %{glib2_version}
-BuildRequires: json-glib-devel >= %{json_glib_version}
-BuildRequires: gnutls-devel
 BuildRequires: gnutls
-BuildRequires: gpgme-devel
 BuildRequires: vala
 BuildRequires: help2man
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(glib-2.0)>= %{glib2_version}
+BuildRequires: pkgconfig(json-glib-1.0) >= %{json_glib_version}
+BuildRequires: pkgconfig(gnutls)
+BuildRequires: pkgconfig(gpgme-glib)
+BuildRequires: pkgconfig(vapigen)
 
 Requires: glib2%{?_isa} >= %{glib2_version}
 
@@ -34,7 +35,7 @@ This provides equivalent functionality to the catalog files supported in
 Microsoft Windows.
 
 %package -n %libname
-Summary: $prog
+Summary: Library for reading Jcat files
 Group: System/Libraries
 
 %description -n %libname
