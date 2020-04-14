@@ -19,7 +19,7 @@ BuildRequires: gnutls
 BuildRequires: vala
 BuildRequires: help2man
 BuildRequires: pkgconfig(gobject-introspection-1.0)
-BuildRequires: pkgconfig(glib-2.0)>= %{glib2_version}
+BuildRequires: pkgconfig(glib-2.0) >= %{glib2_version}
 BuildRequires: pkgconfig(json-glib-1.0) >= %{json_glib_version}
 BuildRequires: pkgconfig(gnutls)
 BuildRequires: pkgconfig(gpgme-glib)
