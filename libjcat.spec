@@ -66,15 +66,12 @@ Executable and data files for installed tests.
 
 %meson \
     -Dgtkdoc=true \
-    -Dtests=true
+    -Dtests=false
 
 %meson_build
 
 %install
 %meson_install
-
-%check
-%meson_test
 
 %files -n %libname
 %doc README.md
