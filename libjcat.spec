@@ -53,12 +53,6 @@ Requires: %{libname} = %{version}-%{release}
 %description -n %devname
 Files for development with %{name}.
 
-%package tests
-Summary: Files for installed tests
-
-%description tests
-Executable and data files for installed tests.
-
 %prep
 %setup -q
 
@@ -95,12 +89,3 @@ Executable and data files for installed tests.
 %dir %{_datadir}/vala/vapi
 %{_datadir}/vala/vapi/jcat.deps
 %{_datadir}/vala/vapi/jcat.vapi
-
-%files tests
-%doc README.md
-%dir %{_datadir}/installed-tests
-%dir %{_libexecdir}/installed-tests
-%dir %{_libexecdir}/installed-tests/libjcat
-%{_libexecdir}/installed-tests/libjcat/jcat-self-test
-%{_datadir}/installed-tests/libjcat/*
-%dir %{_datadir}/installed-tests/libjcat
