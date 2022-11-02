@@ -9,7 +9,7 @@
 Summary:	Library for reading Jcat files
 Group:		System/Libraries
 Name:		libjcat
-Version:	0.1.8
+Version:	0.1.12
 Release:	1
 License:	LGPLv2+
 URL:		https://github.com/hughsie/libjcat
