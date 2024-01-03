@@ -1,16 +1,18 @@
 %define major 1
 %define gmajor 1.0
-%define libname %mklibname jcat %major
+%define libname %mklibname jcat
+%define oldlibname %mklibname jcat 1
 %define devname %mklibname -d jcat
-%define girname %mklibname jcat-gir %{gmajor}
+%define girname %mklibname jcat-gir
+%define oldgirname %mklibname jcat-gir 1.0
 %global glib2_version 2.45.8
 %global json_glib_version 1.1.1
 
 Summary:	Library for reading Jcat files
 Group:		System/Libraries
 Name:		libjcat
-Version:	0.1.12
-Release:	2
+Version:	0.2.0
+Release:	1
 License:	LGPLv2+
 URL:		https://github.com/hughsie/libjcat
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
@@ -25,6 +27,7 @@ BuildRequires:	pkgconfig(glib-2.0) >= %{glib2_version}
 BuildRequires:	pkgconfig(json-glib-1.0) >= %{json_glib_version}
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gpgme-glib)
+BuildRequires:  pkgconfig(gmp)
 BuildRequires:	pkgconfig(vapigen)
 Conflicts:	%{_lib}jcat1 < 0.1.8
 
@@ -38,6 +41,7 @@ Microsoft Windows.
 %package -n %{libname}
 Summary:	Library for reading Jcat files
 Group:		System/Libraries
+%rename  %{oldlibname}
 
 %description -n %{libname}
 This library allows reading and writing gzip-compressed JSON catalog files,
@@ -49,6 +53,7 @@ Microsoft Windows.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for Jcat
 Group:		System/Libraries
+%rename %{oldgirname}
 Requires:	%{libname} = %{EVRD}
 Conflicts:	%{_lib}jcat1 < 0.1.8
 
