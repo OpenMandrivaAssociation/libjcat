@@ -1,8 +1,10 @@
 %define major 1
 %define gmajor 1.0
-%define libname %mklibname jcat %major
+%define libname %mklibname jcat
+%define oldlibname %mklibname jcat 1
 %define devname %mklibname -d jcat
-%define girname %mklibname jcat-gir %{gmajor}
+%define girname %mklibname jcat-gir
+%define oldgirname %mklibname jcat-gir 1.0
 %global glib2_version 2.45.8
 %global json_glib_version 1.1.1
 
@@ -39,6 +41,7 @@ Microsoft Windows.
 %package -n %{libname}
 Summary:	Library for reading Jcat files
 Group:		System/Libraries
+%rename  %{oldlibname}
 
 %description -n %{libname}
 This library allows reading and writing gzip-compressed JSON catalog files,
@@ -50,6 +53,7 @@ Microsoft Windows.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for Jcat
 Group:		System/Libraries
+%rename %{oldgirname}
 Requires:	%{libname} = %{EVRD}
 Conflicts:	%{_lib}jcat1 < 0.1.8
 
