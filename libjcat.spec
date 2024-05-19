@@ -15,7 +15,8 @@ Version:	0.2.1
 Release:	1
 License:	LGPLv2+
 URL:		https://github.com/hughsie/libjcat
-Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
+Source0:    https://github.com/hughsie/libjcat/releases/download/%{version}/libjcat-%{version}.tar.xz
+#Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
 
 BuildRequires:	gtk-doc
 BuildRequires:	meson
